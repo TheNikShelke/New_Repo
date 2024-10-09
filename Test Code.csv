@@ -1,0 +1,15 @@
+ this block fetches the source code from the URL entered.
+"        private void buttonFetch_Click(object sender, EventArgs e)"
+        {
+            using (WebClient webClient = new WebClient())
+            {
+"                string s = webClient.DownloadString(""http://www.ebay.com"");"
+
+"                Clipboard.SetText(s, TextDataFormat.Text);"
+
+                string[] lines = { s };
+"                System.IO.File.WriteAllLines(@""C:\Users\user\Dropbox\Personal Projects\WriteLines.txt"", lines);"
+
+"                MessageBox.Show(s.ToString(), ""Source code"","
+"                MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);"
+            }
